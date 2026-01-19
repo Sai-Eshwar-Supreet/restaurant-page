@@ -1,6 +1,8 @@
-import homeContent from './Pages/home.js'
-import menuContent from './Pages/menu.js'
-import aboutContent from './Pages/about.js'
+import "./styles/styles.css";
+
+import homeContent from './pages/home.js'
+import menuContent from './pages/menu.js'
+import aboutContent from './pages/about.js'
 
 
 const screenRenderer = (
@@ -37,14 +39,14 @@ const screenRenderer = (
             
             if(!id) return;
             screenRenderer.switchContent(id);
-            
+
             window.scrollTo({
                 top: 0,
                 behavior: "smooth"
             });
         });
         
-        screenRenderer.switchContent("About");
+        screenRenderer.switchContent("Home");
         
         
         
