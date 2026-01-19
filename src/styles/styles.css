@@ -81,13 +81,31 @@ img{
 }
 
 .hero{
+    background-image: url("../assets/hero.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
     min-height: 60vh;
     display: flex;
 
     align-items: center;
+
+    position: relative;
+}
+
+.hero::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.65);
 }
 
 .hero .container{
+    position: relative;
+    z-index: 1;
+
     display: flex;
     flex-direction: column;
     gap: var(--space-medium);
@@ -124,7 +142,12 @@ h1, h2, h3{
     color: var(--color-text-primary);
 }
 
+.hero p{
+    color: rgba(255, 255, 255, 0.85);
+}
+
 .hero h1{
+    color: white;
     font-size: clamp(2.5rem, 5vh, 3.5rem);
     margin-bottom: var(--space-medium);
 }
