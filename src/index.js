@@ -34,11 +34,22 @@ const screenRenderer = (
 (
     function(){
 
+        const initialElement = document.querySelector("header [data-link=\"Home\"");
+        let activeElement;
+
+        function setActiveElement(el){
+            if(activeElement) activeElement.classList.remove("active");
+            activeElement = el;
+            activeElement.classList.add("active");
+        }
+
         document.addEventListener( "click", event => {
             const id = event.target.dataset.link;
             
             if(!id) return;
             screenRenderer.switchContent(id);
+            
+            setActiveElement(event.target);
 
             window.scrollTo({
                 top: 0,
@@ -46,10 +57,7 @@ const screenRenderer = (
             });
         });
         
-        screenRenderer.switchContent("Home");
-        
-        
-        
-        console.log("Rendered");
+        setActiveElement(initialElement)
+        screenRenderer.switchContent(initialElement.dataset.link);
     }
 )();

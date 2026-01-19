@@ -12,8 +12,6 @@ const createElement = function({type, textContent, classList, attributes, datase
     }
 
     if(!!attributes && (typeof(attributes) === "object")){
-        console.log(attributes);
-        console.log(Object.keys(attributes));
         for(let key of Object.keys(attributes)){
             element[key] = attributes[key];
         }
