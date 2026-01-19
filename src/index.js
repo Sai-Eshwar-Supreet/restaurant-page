@@ -31,15 +31,20 @@ const screenRenderer = (
 // Initializer IIFE
 (
     function(){
+
         document.addEventListener( "click", event => {
             const id = event.target.dataset.link;
             
             if(!id) return;
-            
             screenRenderer.switchContent(id);
+            
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
         });
         
-        screenRenderer.switchContent("Menu");
+        screenRenderer.switchContent("About");
         
         
         

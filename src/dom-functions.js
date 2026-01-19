@@ -1,4 +1,4 @@
-const createElement = function({type, textContent = "", classList =[], attributes={}} = {}){
+const createElement = function({type, textContent, classList, attributes, dataset} = {}){
     if(typeof(type) !== 'string') throw Error(`Expected type string. Provided: ${type} (${typeof(type)})`);
     const element = document.createElement(type);
 
@@ -6,17 +6,22 @@ const createElement = function({type, textContent = "", classList =[], attribute
 
     if(Array.isArray(classList) && classList.length > 0){
         for(let c of classList){
-            if(!c || c === null || typeof(c) !== "string") continue;
+            if(!c || typeof(c) !== "string") continue;
             element.classList.add(c);
         }
     }
 
     if(!!attributes && (typeof(attributes) === "object")){
+        console.log(attributes);
+        console.log(Object.keys(attributes));
+        for(let key of Object.keys(attributes)){
+            element[key] = attributes[key];
+        }
+    }
 
-        for(let key in attributes){
-            if(Object.hasOwn(attributes, key)){
-                element[key] = attributes[key];
-            }
+    if(!!dataset  && (typeof(dataset) === "object")){
+        for(let key of Object.keys(dataset)){
+            element.dataset[key] = dataset[key];
         }
     }
 
@@ -24,15 +29,15 @@ const createElement = function({type, textContent = "", classList =[], attribute
 }
 
 function createElementRecursively(node){
-    if(!node || node === null || (typeof(node) !== 'object')) return;
+    if(!node || (typeof(node) !== 'object')) return;
     const nodeElement = createElement(node);
 
-    if(!nodeElement || nodeElement === null) return;
+    if(!nodeElement) return;
 
     if(!!node.children){
         for(let child of node.children){
             const childElement = createElementRecursively(child);
-            if(!!childElement && childElement !== null) nodeElement.appendChild(childElement);
+            if(!!childElement) nodeElement.appendChild(childElement);
         }
     }
 

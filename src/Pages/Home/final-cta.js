@@ -19,6 +19,9 @@ export default {
             type: 'button',
             textContent: "Explore Menu",
             classList:["cta", "secondary"],
+            dataset: {
+                link: "Menu"
+            }
         },
     ]
 };

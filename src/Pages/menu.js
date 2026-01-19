@@ -1,6 +1,6 @@
 import { createElementRecursively } from "../dom-functions"
 
-import hero from "./Menu/menu-home.js";
+import hero from "./Menu/hero.js";
 import categories from "./Menu/menu-categories.js";
 import starters from "./Menu/Menu-Sections/starters.js";
 import mains from "./Menu/Menu-Sections/mains.js";

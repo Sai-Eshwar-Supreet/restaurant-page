@@ -1,5 +1,5 @@
 export default {
-    type: "div",
+    type: "section",
     classList: ['home-hero'],
     children: [
         {
@@ -17,7 +17,10 @@ export default {
                 {
                     type: "button",
                     textContent: "Explore Menu",
-                    classList: ["cta", "primary"]
+                    classList: ["cta", "primary"],
+                    dataset: {
+                        link: "Menu"
+                    }
                 },
                 {
                     type: "button",

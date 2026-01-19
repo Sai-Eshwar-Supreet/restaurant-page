@@ -1,4 +1,6 @@
-import placeholderImage from "../../Assets/placeholder-image.png";
+import chickenImage from "../../Assets/chicken.png";
+import custardImage from "../../Assets/custard.png";
+import grainBowlImage from "../../Assets/grain-bowl.png";
 
 export default {
     type: "section",
@@ -19,25 +21,33 @@ export default {
                 {
                     type: "img",
                     attributes: {
-                        src: placeholderImage,
-                        alt: "placeholder for highlight image"
+                        src: chickenImage,
+                        alt: "Grilled herb chicken"
                     }
                 },
                 {
                     type: "img",
                     attributes: {
-                        src: placeholderImage,
-                        alt: "placeholder for highlight image"
+                        src: custardImage,
+                        alt: "Vanilla custard dessert"
                     }
                 },
                 {
                     type: "img",
                     attributes: {
-                        src: placeholderImage,
-                        alt: "placeholder for highlight image"
+                        src: grainBowlImage,
+                        alt: "Vegetable grain bowl"
                     }
                 }
             ]
         },
+        {
+            type: "button",
+            classList: ["cta", "primary"],
+            textContent: "See What's Cooking",
+            dataset: {
+                link: "Menu"
+            }
+        }
     ]
 };
