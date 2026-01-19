@@ -1,22 +1,192 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ==================== RESET ==================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
+*{
+    margin: 0;
+    font: inherit;
+}
+
+body{
+    margin: 0;
+}
+
+img{
+    display: block;
+
+    width: 100px;
+}
+
+/* ==================== TOKENS ==================== */
+
 :root{
-    /* Neutrals*/
-    --color-n-100: #e2d1de;
-    --color-n-300: #c7b1c2;
-    --color-n-500: #694460;
-    --color-n-700: #421b38;
-    --color-n-900: #2e0925;
+    /* Container width */
+    --container-max-width: min(1200px, calc(100% - 2rem));
+    --container-padding: 16px;
 
-    /* Accent*/
-    --color-a-100: #eddee9;
-    --color-a-500: #80005a;
-    --color-a-900: #500138;
+    /* Spacing */
+    --space-small: 8px;
+    --space-medium: 16px;
+    --space-large: 24px;
 
-    /* =========== FONT ========== */
-    font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* Border radius */
+    --radius-small: 8px;
+
+    /* Shadows */
+    --shadow-lift: 0 2px 2px 0 rgba(0, 0, 0, 0.08);
+
+    /* Colors */
+    --color-bg-base: #f5eee9;
+    --color-bg-alt: #f1ddce;
+    --color-text-primary: #3b1a01;
+    --color-text-secondary: #5a4434;
+    --color-accent: #db6c17;
+}
+
+
+/* ==================== GENERAL ==================== */
+
+/* Layout */
+
+.container{
+    max-width: var(--container-max-width);
+    padding-inline: var(--space-medium);
+    margin-inline: auto;
+}
+
+.section-base{
+    padding-block: var(--space-medium);
+}
+
+.section-base, .section-alt, .section-emphasis{
+    /* border: 1px solid black; */
+}
+
+.section-alt, .section-emphasis{
+    padding-block: var(--space-large);
+}
+
+.section-base{
+    background-color: var(--color-bg-base);
+}
+
+.section-alt{
+    background-color: var(--color-bg-alt);
+}
+
+.section-emphasis{
+
+}
+
+.hero{
+    min-height: 60vh;
+    display: flex;
+
+    align-items: center;
+}
+
+.hero .container{
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-medium);
+}
+
+.site-header .container{
+    display: flex;
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+.site-header nav ul{
+    display: flex;
+    gap: var(--space-medium);
+    list-style: none;
+    padding: 0;
+}
+
+
+/* Typography */
+
+body{
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-text-primary);
+}
+
+h1, h2, h3{
+    font-family: "Playfair Display", serif;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--color-text-primary);
+}
+
+.hero h1{
+    font-size: clamp(2.5rem, 5vh, 3.5rem);
+    margin-bottom: var(--space-medium);
+}
+
+section h2{
+    font-size: 1.75rem;
+    margin-bottom: var(--space-small);
+}
+
+p{
+    margin-bottom: var(--space-medium);
+    max-width: 60ch;
+}
+
+nav{
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* Interactions */
+
+.actions{
+    display: flex;
+    gap: var(--space-small);
+
+    margin-top: var(--space-medium);
+}
+
+button{
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+
+    padding: 0.6em 1.1em;
+    border-radius: var(--radius-small);
+
+    border: 1px solid transparent;
+    background: none;
+    color: inherit;
+
+    cursor: pointer;
+}
+
+.cta.primary{
+    background-color: var(--color-accent);
+    color: white;
+
+    box-shadow: var(--shadow-lift);
+}
+
+.cta.secondary{
+    background-color: transparent;
+    color: var(--color-accent);
+
+    border: 1px solid var(--color-accent);
+}
+.cta.primary:hover,
+.cta.primary:focus-visible{
+    filter: brightness(0.95);
+}
+
+.cta.secondary:hover{
+    background-color: #db6c1713;
 }

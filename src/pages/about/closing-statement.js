@@ -1,10 +1,16 @@
 export default {
     type: "section",
-    classList: ["about-close"],
+    classList: ["about-close", "section-base"],
     children: [
         {
-            type: 'p',
-            textContent: "Table & Stone is a place to eat well, slow down, and enjoy food without overthinking it."
-        }
+            type: "div",
+            classList: ["container"],
+            children: [
+                {
+                    type: 'p',
+                    textContent: "Table & Stone is a place to eat well, slow down, and enjoy food without overthinking it."
+                }
+            ]
+        },
     ]
 };

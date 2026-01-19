@@ -1,31 +1,37 @@
 export default {
     type: "section",
-    classList: ['home-hero'],
+    classList: ['hero', "section-emphasis"],
     children: [
         {
-            type: 'h2',
-            textContent: "Food Worth Showing Up For",
-        },
-        {
-            type: 'p',
-            textContent: "Thoughtfully prepared dishes, served fresh every day."
-        },
-        {
-            type: 'div',
-            classList: ["hero-actions"],
+            type: "div",
+            classList: ["container"],
             children: [
                 {
-                    type: "button",
-                    textContent: "Explore Menu",
-                    classList: ["cta", "primary"],
-                    dataset: {
-                        link: "Menu"
-                    }
+                    type: 'h1',
+                    textContent: "Food Worth Showing Up For",
                 },
                 {
-                    type: "button",
-                    textContent: "Reserve a Table",
-                    classList: ["cta", "secondary"]
+                    type: 'p',
+                    textContent: "Thoughtfully prepared dishes, served fresh every day."
+                },
+                {
+                    type: 'div',
+                    classList: ["actions"],
+                    children: [
+                        {
+                            type: "button",
+                            textContent: "Explore Menu",
+                            classList: ["cta", "primary"],
+                            dataset: {
+                                link: "Menu"
+                            }
+                        },
+                        {
+                            type: "button",
+                            textContent: "Reserve a Table",
+                            classList: ["cta", "secondary"]
+                        }
+                    ]
                 }
             ]
         }

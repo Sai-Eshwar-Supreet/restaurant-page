@@ -1,23 +1,29 @@
 export default {
     type: "section",
-    classList: ["value-strip"],
+    classList: ["value-strip", "section-base"],
     children: [
         {
-            type: "ul",
+            type: "div",
+            classList: ["container"],
             children: [
                 {
-                    type: 'li',
-                    textContent: "Fresh Ingredients"
-                },
-                {
-                    type: 'li',
-                    textContent: "Simple Recipes"
-                },
-                {
-                    type: 'li',
-                    textContent: "Comfortable Space"
+                    type: "ul",
+                    children: [
+                        {
+                            type: 'li',
+                            textContent: "Fresh Ingredients"
+                        },
+                        {
+                            type: 'li',
+                            textContent: "Simple Recipes"
+                        },
+                        {
+                            type: 'li',
+                            textContent: "Comfortable Space"
+                        }
+                    ]
                 }
             ]
-        }
+        },
     ]
 };

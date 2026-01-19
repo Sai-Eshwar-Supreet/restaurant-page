@@ -34,19 +34,25 @@ function createSection(sectionData){
     const items = sectionData.items.map( item => createMenuItem(item));
     return {
         type: "section",
-        classList: ["menu-section"],
+        classList: ["menu-section", "section-alt"],
         attributes: {
             id: sectionData.id
         }, 
         children: [
             {
-                type: "h3",
-                textContent: sectionData.sectionTitle,
-            },
-            {
-                type: "ul",
-                classList: ["menu-list"],
-                children: items
+                type: "div",
+                classList: ["container"],
+                children: [
+                    {
+                        type: "h2",
+                        textContent: sectionData.sectionTitle,
+                    },
+                    {
+                        type: "ul",
+                        classList: ["menu-list"],
+                        children: items
+                    },
+                ]
             },
         ]
     };

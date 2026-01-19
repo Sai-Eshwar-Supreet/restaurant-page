@@ -4,50 +4,62 @@ import grainBowlImage from "../../assets/grain-bowl.png";
 
 export default {
     type: "section",
-    classList: ["highlights"],
+    classList: ["highlights", "section-alt"],
     children: [
         {
-            type: 'h2',
-            textContent: "Today's Favorites",
-        },
-        {
-            type: 'p',
-            textContent: "A rotating selection of seasonal dishes our guests keep coming back for.",
-        },
-        {
-            type: 'div',
-            classList: ["image-grid"],
+            type: "div",
+            classList: ["container"],
             children: [
                 {
-                    type: "img",
-                    attributes: {
-                        src: chickenImage,
-                        alt: "Grilled herb chicken"
-                    }
+                    type: 'h2',
+                    textContent: "Today's Favorites",
                 },
                 {
-                    type: "img",
-                    attributes: {
-                        src: custardImage,
-                        alt: "Vanilla custard dessert"
-                    }
+                    type: 'p',
+                    textContent: "A rotating selection of seasonal dishes our guests keep coming back for.",
                 },
                 {
-                    type: "img",
-                    attributes: {
-                        src: grainBowlImage,
-                        alt: "Vegetable grain bowl"
-                    }
+                    type: 'div',
+                    classList: ["image-grid"],
+                    children: [
+                        {
+                            type: "img",
+                            attributes: {
+                                src: chickenImage,
+                                alt: "Grilled herb chicken"
+                            }
+                        },
+                        {
+                            type: "img",
+                            attributes: {
+                                src: custardImage,
+                                alt: "Vanilla custard dessert"
+                            }
+                        },
+                        {
+                            type: "img",
+                            attributes: {
+                                src: grainBowlImage,
+                                alt: "Vegetable grain bowl"
+                            }
+                        }
+                    ]
+                },
+                {
+                    type: "div",
+                    classList: ["actions"],
+                    children: [
+                        {
+                            type: "button",
+                            classList: ["cta", "primary"],
+                            textContent: "See What's Cooking",
+                            dataset: {
+                                link: "Menu"
+                            }
+                        }
+                    ]
                 }
             ]
         },
-        {
-            type: "button",
-            classList: ["cta", "primary"],
-            textContent: "See What's Cooking",
-            dataset: {
-                link: "Menu"
-            }
-        }
     ]
 };

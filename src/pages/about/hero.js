@@ -1,14 +1,20 @@
 export default {
     type: "section",
-    classList: ["about-hero"],
+    classList: ["hero", "section-emphasis"],
     children: [
         {
-            type: "h2",
-            textContent: "About Table & Stone"
+            type: "div",
+            classList: ["container"],
+            children: [
+                {
+                    type: "h1",
+                    textContent: "About Table & Stone"
+                },
+                {
+                    type: "p",
+                    textContent: "A simple approach to food, done with care."
+                }
+            ]
         },
-        {
-            type: "p",
-            textContent: "A simple approach to food, done with care."
-        }
     ]
 };
