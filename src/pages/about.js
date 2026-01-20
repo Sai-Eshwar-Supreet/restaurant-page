@@ -11,4 +11,6 @@ const blueprint = {
     children: [hero, philosophy, process, closingStatement]
 }
 
-export default createElementRecursively(blueprint);
+export default function createAboutPage() {
+    return createElementRecursively(blueprint);
+};

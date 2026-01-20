@@ -13,4 +13,6 @@ const blueprint = {
     children: [heroSection, valueStripSection, highlightsSection, atmosphereSection, socialProofSection, finalCtaSection]
 }
 
-export default createElementRecursively(blueprint);
+export default function createHomePage() {
+    return createElementRecursively(blueprint);
+};

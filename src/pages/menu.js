@@ -14,4 +14,6 @@ const blueprint = {
     children: [hero, categories, starters, mains, sides, desserts, drinks, cta]
 }
 
-export default createElementRecursively(blueprint);
+export default function createMenuPage() {
+    return createElementRecursively(blueprint);
+};

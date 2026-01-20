@@ -8,7 +8,7 @@ import aboutContent from './pages/about.js'
 const screenRenderer = (
     function(){
 
-        const navDictionary = {
+        const factoryDictionary = {
             "Home": homeContent,
             "Menu": menuContent,
             "About": aboutContent
@@ -18,9 +18,12 @@ const screenRenderer = (
 
         
         function switchContent(id){
-            const newContent = navDictionary[id];
-            if(!content) return;
+            const factory = factoryDictionary[id];
+            if(!content || !factory) return;
             
+            const newContent = factory();
+            if(!newContent) return;
+
             content.innerHTML = "";
             content.appendChild(newContent);
         }
@@ -49,7 +52,10 @@ const screenRenderer = (
         }
 
         document.addEventListener( "click", event => {
-            const id = event.target.dataset.link;
+            const trigger = event.target.closest("[data-link]");
+            if(!trigger) return;
+
+            const id = trigger.dataset.link;
             
             if(!id) return;
             screenRenderer.switchContent(id);
