@@ -14,7 +14,7 @@ export default {
                 },
                 {
                     type: "div",
-                    classList: ["image-grid"],
+                    classList: ["process-content"],
                     children: [
                         {
                             type: 'img',
@@ -22,30 +22,30 @@ export default {
                                 src: howWeWorkImage,
                                 alt: "Chef plating a dish with fresh ingredients",
                             }
+                        },
+                        {
+                            type: "ul",
+                            children:[
+                                {
+                                    type: "li",
+                                    textContent: "Ingredients are sourced fresh and prepared daily"
+                                },
+                                {
+                                    type: "li",
+                                    textContent: "Menus change based on season and availability"
+                                },
+                                {
+                                    type: "li",
+                                    textContent: "Dishes are kept focused, not overcomplicated"
+                                },
+                                {
+                                    type: "li",
+                                    textContent: "Service is attentive without being intrusive"
+                                },
+                            ]
                         }
                     ]
                 },
-                {
-                    type: "ul",
-                    children:[
-                        {
-                            type: "li",
-                            textContent: "Ingredients are sourced fresh and prepared daily"
-                        },
-                        {
-                            type: "li",
-                            textContent: "Menus change based on season and availability"
-                        },
-                        {
-                            type: "li",
-                            textContent: "Dishes are kept focused, not overcomplicated"
-                        },
-                        {
-                            type: "li",
-                            textContent: "Service is attentive without being intrusive"
-                        },
-                    ]
-                }
             ]
         },
     ]
