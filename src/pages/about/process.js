@@ -13,11 +13,17 @@ export default {
                     textContent: "How We Work"
                 },
                 {
-                    type: 'img',
-                    attributes:{
-                        src: howWeWorkImage,
-                        alt: "Chef plating a dish with fresh ingredients",
-                    }
+                    type: "div",
+                    classList: ["image-grid"],
+                    children: [
+                        {
+                            type: 'img',
+                            attributes:{
+                                src: howWeWorkImage,
+                                alt: "Chef plating a dish with fresh ingredients",
+                            }
+                        }
+                    ]
                 },
                 {
                     type: "ul",

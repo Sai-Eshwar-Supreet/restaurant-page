@@ -321,12 +321,8 @@ ul {
 }
 
 /* Images */
-
-.highlights .image-grid{
+.image-grid{
     margin-top: var(--space-medium);
-}
-
- .image-grid{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-medium);
@@ -339,4 +335,25 @@ ul {
     object-fit: cover;
     border-radius: var(--radius-small);
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+ }
+
+ /* Quotes */
+
+ blockquote{
+    padding-left: var(--space-medium);
+    border-left: 1px solid var(--color-bg-alt);
+ }
+
+ blockquote p{
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+ }
+
+ blockquote cite{
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    margin-top: var(--space-small);
+ }
+ blockquote + blockquote{
+    margin-top: var(--space-medium);
  }
