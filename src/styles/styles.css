@@ -41,7 +41,7 @@ img{
     --color-bg-base: #f5eee9;
     --color-bg-alt: #f1ddce;
     --color-text-primary: #3b1a01;
-    --color-text-secondary: #5a4434;
+    --color-text-secondary: #8b6d58;
     --color-accent: #db6c17;
 }
 
@@ -248,4 +248,76 @@ button{
 
 .cta.secondary:hover{
     background-color: #db6c1713;
+}
+
+
+/* List system */
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.value-strip ul{
+    display: flex;
+    gap: var(--space-large);
+}
+
+.value-strip li{
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+}
+
+.menu-categories ul{
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-small);
+}
+
+.menu-categories a{
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.menu-categories a:hover,
+.menu-categories a:focus-visible{
+    color: var(--color-text-primary);
+}
+
+/* Menu System */
+
+.menu-list{
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-medium);
+
+    max-width: 600px;
+}
+
+.menu-item-header{
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-small);
+}
+
+.menu-item-name{
+    font-weight: 500;
+    color: var(--color-text-primary);
+}
+
+.menu-item-price{
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    white-space: nowrap;
+
+    margin-left: auto;
+}
+
+.menu-item-description{
+    margin-top: 0.25rem;
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    max-width: 50ch;
 }

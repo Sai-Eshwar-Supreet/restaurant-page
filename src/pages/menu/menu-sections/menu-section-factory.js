@@ -9,19 +9,19 @@ function createMenuItem({name, price, description}){
                 children: [
                     {
                         type: "span",
-                        classList: ["item-name"],
+                        classList: ["menu-item-name"],
                         textContent: name
                     },
                     {
                         type: "span",
-                        classList: ["item-price"],
+                        classList: ["menu-item-price"],
                         textContent: price
                     },
                 ]
             },
             {
                 type: "p",
-                classList: ["item-description"],
+                classList: ["menu-item-description"],
                 textContent: description
             }
         ]
