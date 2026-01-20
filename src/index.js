@@ -33,8 +33,13 @@ const screenRenderer = (
 // Initializer IIFE
 (
     function(){
+        const tabButtons = {};
 
-        const initialElement = document.querySelector("header [data-link=\"Home\"");
+        for(let el of [...document.querySelectorAll(".tab")]){
+            tabButtons[el.dataset.link] = el;
+        }
+
+        const initialElement = tabButtons["Home"];
         let activeElement;
 
         function setActiveElement(el){
@@ -49,7 +54,7 @@ const screenRenderer = (
             if(!id) return;
             screenRenderer.switchContent(id);
             
-            setActiveElement(event.target);
+            setActiveElement(tabButtons[id]);
 
             window.scrollTo({
                 top: 0,

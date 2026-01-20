@@ -112,18 +112,37 @@ img{
 }
 
 .site-header .container{
+    width: 100%;
     display: flex;
     align-items: center;
-
+    flex-flow: row wrap;
+    
     justify-content: space-between;
 }
 
-.site-header nav ul{
-    display: flex;
-    gap: var(--space-medium);
-    list-style: none;
-    padding: 0;
+.site-header > .container > h1{
+    flex: 3;
 }
+.site-header > .container > nav{
+    flex: 1;
+}
+
+.site-header .brand{
+    font-family: "Playfair Display", serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.site-header nav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-large);
+}
+
 
 
 /* Typography */
@@ -141,6 +160,23 @@ h1, h2, h3{
     line-height: 1.2;
     color: var(--color-text-primary);
 }
+.site-header nav .tab{
+    border-radius: 0;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: rgba(59, 26, 1, 0.85);
+}
+.site-header nav .tab:hover,
+.site-header nav .tab:focus-visible{
+    color: #3b1a01;
+}
+.site-header nav .tab.active{
+    color: #3b1a01;
+    border-bottom: 1px solid rgba(59, 26, 1, 0.6);
+    padding-bottom: 2px;
+}
+
 
 .hero p{
     color: rgba(255, 255, 255, 0.85);
